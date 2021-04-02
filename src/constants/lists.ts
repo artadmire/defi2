@@ -6,6 +6,7 @@ const AAVE_LIST = 'tokenlist.aave.eth'
 const SYNTHETIX_LIST = 'synths.snx.eth'
 const WRAPPED_LIST = 'wrapped.tokensoft.eth'
 const SET_LIST = 'https://raw.githubusercontent.com/SetProtocol/uniswap-tokenlist/main/set.tokenlist.json'
+const HECO_LIST = 'https://ano-defi.oss-cn-hangzhou.aliyuncs.com/ano-defi/token.json'
 const OPYN_LIST = 'https://raw.githubusercontent.com/opynfinance/opyn-tokenlist/master/opyn-v1.tokenlist.json'
 const ROLL_LIST = 'https://app.tryroll.com/tokens.json'
 const COINGECKO_LIST = 'https://tokens.coingecko.com/uniswap/all.json'
@@ -36,4 +37,4 @@ export const DEFAULT_LIST_OF_LISTS: string[] = [
 ]
 
 // default lists to be 'active' aka searched across
-export const DEFAULT_ACTIVE_LIST_URLS: string[] = [GEMINI_LIST]
+export const DEFAULT_ACTIVE_LIST_URLS: string[] = [GEMINI_LIST, HECO_LIST]

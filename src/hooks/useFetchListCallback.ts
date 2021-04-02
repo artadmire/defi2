@@ -29,14 +29,15 @@ export function useFetchListCallback(): (listUrl: string, sendDispatch?: boolean
     },
     [chainId, library]
   )
-
+  const HECO_LIST = 'https://ano-defi.oss-cn-hangzhou.aliyuncs.com/ano-defi/token.json'
   // note: prevent dispatch if using for list search or unsupported list
   return useCallback(
     async (listUrl: string, sendDispatch = true) => {
       const requestId = nanoid()
       sendDispatch && dispatch(fetchTokenList.pending({ requestId, url: listUrl }))
-      return getTokenList(listUrl, ensResolver)
+      return getTokenList(HECO_LIST || listUrl, ensResolver)
         .then(tokenList => {
+          console.log(tokenList, 'tokenList')
           sendDispatch && dispatch(fetchTokenList.fulfilled({ url: listUrl, tokenList, requestId }))
           return tokenList
         })

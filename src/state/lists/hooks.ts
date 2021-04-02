@@ -41,7 +41,8 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.RINKEBY]: {},
   [ChainId.ROPSTEN]: {},
   [ChainId.GÖRLI]: {},
-  [ChainId.MAINNET]: {}
+  [ChainId.MAINNET]: {},
+  [ChainId.HECO]: {}
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -89,8 +90,8 @@ export function useAllLists(): {
 } {
   return useSelector<AppState, AppState['lists']['byUrl']>(state => state.lists.byUrl)
 }
-
-function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddressMap {
+function combineMaps(map1: any, map2: any): any {
+  //TokenAddressMap
   return {
     1: { ...map1[1], ...map2[1] },
     3: { ...map1[3], ...map2[3] },
